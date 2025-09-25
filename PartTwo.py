@@ -1,11 +1,11 @@
-ItemList = [{"itemName": "Magazine", "price":"$25"},
-            {"itemName": "Gooner Fanfic", "price": "$35"},
-            {"itemName": "Study Materials", "price": "$500"},
-            {"itemName": "Teriyaki One Menu", "price": "$10"},
+ItemList = [{"itemName": "Magazine", "price": 25},
+            {"itemName": "Gooner Fanfic", "price": 35},
+            {"itemName": "Study Materials", "price": 500},
+            {"itemName": "Teriyaki One Menu", "price": 10},
             {"itemName": "Three Week Old Moldy Ahh Cheese", "price": "free!"},
-            {"itemName": "Monkey Comics", "price": "$50"},
-            {"itemName": "7 Day Old Dead Goldfish", "price": "$72"},
-            {"itemName": "Ella Jiang's Poopy Shoes", "price": "$1226"}
+            {"itemName": "Monkey Comics", "price": 50},
+            {"itemName": "7 Day Old Dead Goldfish", "price": 72},
+            {"itemName": "Ella Jiang's Poopy Shoes", "price": 1226}
             ]
  
 purchases = []
@@ -14,4 +14,13 @@ for i in range(0, len(ItemList)):
 
 print(f"Welcome to Bigbackliver's Library!! Today we have {purchases} for sale")
 
-userWant = input("What would you like to buy? ").lower()
+userItemInput = input("Which item do you want to buy? (Type a number): ") 
+
+ 
+
+userContinue = True
+Cart = []
+
+while userContinue:
+    addCart = input(f"Would you like to add {ItemList[userItemInput]}").lower()
+    if addCart
