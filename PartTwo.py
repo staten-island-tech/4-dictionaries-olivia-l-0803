@@ -14,7 +14,7 @@ for i in range(0, len(ItemList)):
 
 print(f"Welcome to Bigbackliver's Library!! Today we have {purchases} for sale")
 
-userItemInput = input("Which item do you want to buy? (Type a number): ") 
+userItemInput = int(input("Which item do you want to buy? (Type a number): "))
 
  
 
@@ -22,5 +22,11 @@ userContinue = True
 Cart = []
 
 while userContinue:
-    addCart = input(f"Would you like to add {ItemList[userItemInput]}").lower()
-    if addCart
+    addCart = input(f"Would you like to add {ItemList[userItemInput]["itemName"]}? ").lower()
+    if addCart == "yes" or addCart == "ok" or addCart == "okay":
+        Cart.append(ItemList[userItemInput])
+        print("Purchased!")
+    elif  addCart == "no" or addCart == "no thanks" or addCart == "no thank you":
+        print("Let's put the item back. ")
+    else: 
+        print("Sorry, invalid answer :(")
