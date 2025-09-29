@@ -10,3 +10,14 @@ if test.__contains__('biggie'):
     print("die kill your")
 else:
     print("biggie")
+
+
+thing = [{"itemName": "Gooner Fanfic", "price": "$35", "attribute": ["stupidify", "happy"]},
+            {"itemName": "Study Materials", "price": "$500", "attribute": ["intelligence", "stup"]},
+            {"itemName": "Teriyaki One Menu", "price": "$10"},
+            {"itemName": "Three Week Old Moldy Ahh Cheese", "price": "free!"}
+        ]
+
+thing = [
+    
+]
