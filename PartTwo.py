@@ -39,4 +39,4 @@ while userContinue:
     if userItemInput == "yes" or userItemInput == "okay" or userItemInput == "continue":
         userContinue = True 
     elif userItemInput == "no" or userItemInput == "no thanks" or userItemInput == "stop":
-        print("Your total comes to Thank you for shopping!")
+        print(f"Your total comes t o{total}  Thank you for shopping!")
