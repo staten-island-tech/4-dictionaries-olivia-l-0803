@@ -2,10 +2,11 @@ ItemList = [{"itemName": "Magazine", "price": 25},
             {"itemName": "Gooner Fanfic", "price": 35},
             {"itemName": "Study Materials", "price": 500},
             {"itemName": "Teriyaki One Menu", "price": 10},
-            {"itemName": "Three Week Old Moldy Ahh Cheese", "price": "free!"},
+            {"itemName": "Three Week Old Moldy Ahh Cheese", "price": 0},
             {"itemName": "Monkey Comics", "price": 50},
             {"itemName": "7 Day Old Dead Goldfish", "price": 72},
-            {"itemName": "Ella Jiang's Poopy Shoes", "price": 1226}
+            {"itemName": "Ella Jiang's Poopy Shoes", "price": 1226},
+            {"itemName": "Mia's Grass", "price": 120}
             ]
  
 purchases = []
@@ -25,18 +26,19 @@ total = 0
 while userContinue:
     userItemInput = int(input("Which item do you want to buy? (Type a number): "))
 
-    addCart = input(f"Would you like to add {ItemList[userItemInput]["itemName"]} for ${ItemList[userItemInput]["price"]}? ").lower()
+    addCart = input(f"Would you like to add {ItemList[userItemInput - 1]["itemName"]} for ${ItemList[userItemInput - 1]["price"]}? ").lower()
     if addCart == "yes" or addCart == "ok" or addCart == "okay":
-        Cart.append(ItemList[userItemInput])
-        total += ItemList[userItemInput]["price"]
+        Cart.append(ItemList[userItemInput-1])
+        total += ItemList[userItemInput-1]["price"]
         print("Purchased!")
     elif  addCart == "no" or addCart == "no thanks" or addCart == "no thank you":
         print("Let's put the item back. ")
     else: 
         print("Sorry, invalid answer :(")
 
-    userItemInput = input("Would you like to continue shopping?")
+    userItemInput = input("Would you like to continue shopping? ")
     if userItemInput == "yes" or userItemInput == "okay" or userItemInput == "continue":
         userContinue = True 
     elif userItemInput == "no" or userItemInput == "no thanks" or userItemInput == "stop":
-        print(f"Your total comes t o{total}  Thank you for shopping!")
+        print(f"Your total comes to ${total}. Thank you for shopping!")
+        userContinue = False
