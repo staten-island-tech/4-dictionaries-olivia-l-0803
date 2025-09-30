@@ -9,15 +9,14 @@ ItemList = [{"itemName": "Magazine", "price": 25},
             {"itemName": "Mia's Grass", "price": 120}
             ]
  
-purchases = []
-for i in range(0, len(ItemList)):
-    purchases.append(ItemList[i]["itemName"])
-
-print(f"Welcome to Bigbackliver's Library!! Today we have {purchases} for sale")
-
-
-
  
+print("Welcome to Bigbackliver's Library!! Today we have the following items for sale:")
+for itemnumber, itemame in enumerate(ItemList):
+   print(f"Item number {itemnumber + 1}, {itemame["itemName"]}")
+
+
+
+
 
 userContinue = True
 Cart = []
@@ -25,6 +24,11 @@ total = 0
 
 while userContinue:
     userItemInput = int(input("Which item do you want to buy? (Type a number): "))
+    if userItemInput == 0:
+        input("I have caught you. Die. ")
+        while True:
+            print("You have Stinky Feet.")
+        
 
     addCart = input(f"Would you like to add {ItemList[userItemInput - 1]["itemName"]} for ${ItemList[userItemInput - 1]["price"]}? ").lower()
     if addCart.__contains__("yes") or addCart.__contains__("ok"):
@@ -42,3 +46,5 @@ while userContinue:
     elif userItemInput.__contains__("no") or userItemInput.__contains__("stop"):
         print(f"You bought {Cart} and your total comes to ${total}. Thank you for shopping!")
         userContinue = False
+    else:
+        print("")
