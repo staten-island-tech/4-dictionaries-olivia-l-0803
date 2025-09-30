@@ -1,6 +1,10 @@
-userItemInput = input("Which item do you want to buy? (Type a number): ") 
+userItemInput = input("string: ") 
 # input()
 print(type(userItemInput))
+userItemInput = int(input("integer ")) 
+# input()
+print(type(userItemInput))
+
 
 
 
