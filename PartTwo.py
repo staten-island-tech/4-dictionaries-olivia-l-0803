@@ -27,18 +27,18 @@ while userContinue:
     userItemInput = int(input("Which item do you want to buy? (Type a number): "))
 
     addCart = input(f"Would you like to add {ItemList[userItemInput - 1]["itemName"]} for ${ItemList[userItemInput - 1]["price"]}? ").lower()
-    if addCart == "yes" or addCart == "ok" or addCart == "okay":
-        Cart.append(ItemList[userItemInput-1])
+    if addCart.__contains__("yes") or addCart.__contains__("ok"):
+        Cart.append(ItemList[userItemInput-1]["itemName"])
         total += ItemList[userItemInput-1]["price"]
         print("Purchased!")
-    elif  addCart == "no" or addCart == "no thanks" or addCart == "no thank you":
+    elif  addCart.__contains__("no"):
         print("Let's put the item back. ")
     else: 
         print("Sorry, invalid answer :(")
 
     userItemInput = input("Would you like to continue shopping? ")
-    if userItemInput == "yes" or userItemInput == "okay" or userItemInput == "continue":
+    if userItemInput.__contains__("yes") or userItemInput.__contains__("ok") or userItemInput.__contains__("continue"):
         userContinue = True 
-    elif userItemInput == "no" or userItemInput == "no thanks" or userItemInput == "stop":
-        print(f"Your total comes to ${total}. Thank you for shopping!")
+    elif userItemInput.__contains__("no") or userItemInput.__contains__("stop"):
+        print(f"You bought {Cart} and your total comes to ${total}. Thank you for shopping!")
         userContinue = False
